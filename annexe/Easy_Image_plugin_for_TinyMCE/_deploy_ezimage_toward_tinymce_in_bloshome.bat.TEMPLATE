@@ -1,0 +1,13 @@
+@echo off
+echo Deploy ezimage toward BlosHome dev. tree
+echo ----------------------------------------
+
+:: Configurable variables
+set org=ezimage100\ezimage
+set dest=..\..\tiny_mce\jscripts\tiny_mce\plugins\ezimage
+
+xcopy %org%\*.*  %dest_bh% /e /i /f /h /r /y
+
+set org=
+set dest=
+pause>nul

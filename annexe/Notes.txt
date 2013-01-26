@@ -1,0 +1,22 @@
+Here are the external pieces of software embedded in BlosHome
+-------------------------------------------------------------
+
+- Zlib : a well known library of data compression by Jean-Loup Gailly and Mark Adler
+  (see http://www.zlib.net)
+  
+- clsybZip : an interface to manage ZIP format using Zlib, by Andrew McMillan, reworked by Jack and yan35 
+  (see http://files.codes-sources.com/fichier.aspx?id=40387&f=clsybZip.cls)
+
+- DiFtpCli6_FFhMOD : an FTP client by Jean-Luc Delbeke, MODified for BlosHome
+  (see developpez.net/forums/d188815/autres-langages/general-visual-basic-6-vbscript/vb-6-anterieur/vos-contributions-vb6/client-ftp-ocx)
+  
+- TinyMCE : a major WYSIWYG HTML editor by MoxieCode 
+  (see http://www.tinymce.com)
+
+- EasyImage : a TinyMCE plugin to manage image styles, by FFh Lab
+  (see http://ffh-lab.com/ezimage.html)
+
+Every directory contain batch(es) file(s) to deploy resulting material toward BlosHome dev. environment/tree.
+
+--
+FFh Lab - 01/2013

@@ -1,0 +1,1 @@
+EasyImage is a plugin for TinyMCE. It's downloadable for free at http://ffh-lab.com/ezimage.html.

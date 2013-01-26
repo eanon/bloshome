@@ -1,0 +1,290 @@
+[Header]
+Language=EN
+Version=1.0
+Author=FFh Lab / Eric Lequien - http://ffh-lab.com/
+Date=2012.12.12
+
+[Messages]
+0=Not any path is indicated !
+1=Not any program is declared to open the type of file of
+2=The given language file is invalid
+3=The loading of the language file failed
+4=Remote client for any blog under Blosxom engine
+
+5=Copy an article
+6=Enter a filename for the article to create from
+7=Attention
+8=Prohibition to use the characters
+9=No number in first character
+10=All space will converted to underscore
+11=Accents will be removed
+12=All will be converted to lower case
+13=The extension
+14=will be automatically added
+15=Example : 'My First Thoughts' becomes 'my_first_thoughts
+
+16=Do you confirm that you want to delete the article
+17=The article
+18=was deleted successfully
+
+19=Failed to analyze the attached images
+20=No deletion was performed
+21=Failed to delete the article
+22=The article
+23=was deleted
+24=but these attached images was not
+25=You'll have to delete them by yourself
+26=or use the command
+27=Clean
+
+28=New article
+29=Enter a filename for your article to create
+
+30=New category
+31=Enter the new category name to create
+32=Example : 'Serious Thoughts' devient 'serious_thoughts'
+33=Trick : to overcome the missing accents, you can always display the categories in upper case on Web pages
+
+34=publish
+35=a private preview of the article
+36=the local workspace
+37=the remote blog
+38=the article
+39=rapatriate
+40=a copy of the article
+41=a full backup of the articles
+42=Are you sure you want to
+
+43=Upload to the blog
+44=Failed to transfer the article
+45=Try to close and renew
+46=Failed to transfer the image
+47=Finalization on
+48=Failed to finalize on
+49=Success
+50=Failure during local final archiving
+51=The private preview of the article
+52=is now accessible online
+53=You can reach-it with the button 'See online'
+54=If you are statisfied by the result, apply the status 'public'
+55=Otherwise, move-it toward the local workspace for review
+56=The article
+57=is now published
+58=or double-clicking on its name in the right list
+59=Failed to check final integrity (invalid size)
+
+60=Rename an article
+61=Enter a new filename for the article
+
+62=the Blosxom URL has an invalide format. Do you want to modify the information ?
+63=is now private (hidden for the visitors)
+64=is now public (visible for all)
+65=Attention, this status change doesn't modify the date of the article.
+66=Failed to change the status of the selected article
+
+67=Connection attempt
+68=minute
+69=Connected since
+
+70=This feature is not yet implemented
+
+71=No article selected
+72=The selected article doesn't exist (anymore) on disk
+
+73=This name begins with a number
+74=This name contains at least a forbidden character
+75=This article name already exists
+76=Impossible to copy
+
+77=Are you sure you want to permanently delete
+78=The selected element is not an article
+
+79=An article with the same name already exists in local workspace
+
+80=This feature is not fully developed and
+81=and you fall into a case that is not yet supported
+82=(download of an article never or poorly archived)
+
+83=At least one file required by the editor is missing : reinstall
+84=Impossible to create
+85=The selected article doesn't exist (anymore) in the local workspace
+
+86=An article with the same name already exists on server
+87=Do you want to update-it with the content of this new article
+88=IMPORTANT : the date of existing article on blog will be sera maintained
+89=This possibility of update is not yet implemented
+
+90=NB : when the analysis indicates to rename the image during transfer
+91=     its future name on blog is then shown at right side of the symbol
+
+92=command not implemented
+93=Impossible to rename
+
+94=No category selected
+95=The selected element is not a category
+96=This category is not empty
+97=As a security measure, you can not delete-it
+98=Do you confirm that you want to delete the category
+
+99=BlosHome is already running
+100=The help file is absent
+
+101=Attention, the article is empty
+102=Do you want to continue
+103=Attention, the article doesn't present an HTML format
+104=The server access settings are incomplete
+
+105=You are going to
+106=The current project will be closed
+107=Do you want to continue this operation
+
+108=Failed to connect to
+109=on port
+110=as
+111=with the password
+112=Do you want to complete them right now
+
+113=Your article doesn't have a title
+
+114=hides
+115=shows
+
+116=must be a Web address
+
+117=Deconnection
+118=Connected
+119=Connection
+120=Deconnected
+
+121=Delete project
+122=and its workspace
+123=but preserve its workspace (not empty)
+124=Project being loaded, local work is now possible
+125=Not Any project being loaded, possibility of local work is disabled
+
+126=Connection to
+127=being done, remote work is now possible
+128=being disconnected, possibility of remote work is disabled
+
+129=This project is not completely defined
+130=thanks to complete-it
+
+131=The directory
+132=is not empty
+133=As a security measure, it was not deleted
+
+134=Select a project to
+135=open
+136=delete
+
+137=reopen the current project
+138=open a new project
+139=delete the current project
+140=projects found
+141=project found
+
+142=No image found in this directory
+
+[Main Interface]
+mnuProj=&Project
+mnuProj_New=&New
+mnuProj_Open=&Open
+mnuProj_Del=&Delete
+mnuLang=&Language
+mnuInfo_Help=&Help
+mnuInfo_About=&About
+
+cmdProj=Parameter&s
+cmdCnnx=Co&nnection
+
+lstLocalRemote_1=Name
+lstLocalRemote_2=Date
+lstLocalRemote_3=Time
+lstLocalRemote_4=Size
+lstLocalRemote_5=Joint
+lstLocalRemote_6=Enc.
+
+framLocal=Local workspace
+lblLocalArts=Article
+cmdMkLocalArt=C&reate
+cmdCopyLocalArt=Cop&y
+cmdEditLocalArt=E&dit
+cmdDelLocalArt=De&lete
+cmdRenLocalArt=R&ename
+
+cmdUploadArt_0=Previe&w
+cmdUploadArt_1=Pu&blish
+cmdDownloadArt_0=&Copy
+cmdDownloadArt_1=&Move
+cmdBackupBlog=BAC&KUP BLOG
+cmdCleanupBlog=Cle&an
+
+framRemote=Remote blog
+lblRemoteCats=Category
+cmdMkRemoteCat=&Create
+cmdRmRemoteCat=&Delete
+cmdRenRemoteCat=Re&name
+
+lblRemoteArts=Article
+cmdSeeRemoteArt=&See online
+cmdDelRemoteArt=Dele&te
+cmdRenRemoteArt=Rena&me
+optStatusArt_0=Private
+optStatusArt_1=Public
+
+barStatus_Cnnx=Offline
+
+[About Interface]
+Title=About BlosHome
+
+[Edit Interface]
+Title=Article
+lblGallery=Gallery
+cmdCancel=&Quit without saving
+
+[Progress Interface]
+***TOREMOVE
+
+[Project Interface]
+Title=Parameters
+lblTitle=Project name
+lblBlosxomURL=Blosxom URL
+
+framCnnx=Connection
+lblHostPort=Server - Port
+lblUser=Username
+lblPass=Password
+cmdShowPass=show
+
+framTree=Tree
+lblArtRoot=Articles root
+lblExcluded=Excluded paths
+lblArtExt=Articles extension
+lblFlavExt=Flavour extension
+
+framArt=Content
+lblImgMax=Max image size (KB)
+lblArtEncode=Encoding
+
+framStatus=Status
+chkPrev=possibility of preview on publication
+lblPrevPrefix=Prefix
+lblPrevPass=Pass
+lblPrevPlugin=Requires the Preview plugin by Jason Thaxter (or equivalent) on server side.
+
+framCSS=CSS
+lblCSS_0=This style sheet is designed so that your articles appear locally as on your site. The editor knowing nothing about your classes and IDs, you have to obtain the same result assigning styles to the HTML tags only.
+lblCSS_1=Only one exception, the identifier #title which will be applied to the title. Its definition will be written independently, without relying on any inheritance.
+
+framChapo=Lede
+chkChapo=possibility to indicate a lede limit
+lblChapo=Separator
+lblChapoPlugin=Requires the SeeMore plugin by Todd Larason (or equivalent) on server side.
+
+cmdOK=&OK
+cmdCancel=&Cancel
+
+[Select Interface]
+Title=Projects
+cmdOK=&OK
+cmdCancel=&Cancel

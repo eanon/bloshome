@@ -1,0 +1,10 @@
+Quick Example
+
+<!-- Written in BlosHome (c) ffh-lab.com, using TinyMCE (c) moxiecode.com -->
+
+<P><IMG style="MARGIN: 0px 5px 5px 0px; FLOAT: left" border=0 alt=Example src="file:///C:/Program%20Files/FFh%20Lab/BlosHome/1.0/data/blog_dummy_at_hosting-company/red_horizon.jpg" width=200>This article is a simple quick example.</P>
+<P>The image comes from the gallery at right side (which allows you to browse&nbsp;your disks) through a drag n' drop to a valid location in this document. Then, selected the image in the article, I've pushed the ezimage button (colored one in the toolbar) to fine tune its properties.</P>
+<P>And about this text, what to say ? Nothing&nbsp;! I've simply typed on my keyboard :o)</P>
+<P>Oh, yes ! maybe something useful : in the toolbar above, if your current project allows the use of a lede/chapo (see in project settings), you can insert one at the line you want (preferably before the beginning of a paragraph) using the "Page Break" button (two pages separated by dotted line).</P>
+<P>Hoping <B>BlosHome</B> will be a good companion to your <B>Blosxom</B> blog ^o^<BR><BR>Banzaï</P>
+<P>Eric Lequien<BR><A href="http://ffh-lab.com/" target=_blank>ffh-lab.com</A></P><!-- é -->

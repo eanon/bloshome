@@ -1,0 +1,4 @@
+@echo off
+copy /v /y DiFtpCli6_FFhMOD.ocx ..\..\
+echo DiFtpCli6_FFhMOD.ocx has been copied in the BlosHome dev. tree
+pause>nul

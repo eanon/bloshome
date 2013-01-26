@@ -1,0 +1,29 @@
+BlosHome - Inno Setup building
+******************************
+The InnoSetup-based installation of BlosHome has been built using these steps :
+
+0) Gather system dependencies
+-----------------------------
+- Run "Package and Deployment Wizard" (included in "Microsoft Visual Studio 6.0" package, beside VB6) against BlosHome project to gather all dependencies under "./dependency/mspdwizard". Afterward, run "./dependency/mspdwizard/_clean_mspdwizard_content.bat" to alleviate the tree (to what will be useful to Inno Setup and to renew D&P Wizard set).
+
+- Copy a clean (i.e. not the one coming from your own machine/system) set of VB6 system files under "./dependency/vb6sp6sys". These files will be used rather than the one gathered by DPWizard above. This runtime set is easily downloadable on the Net, entering "vb6sp6sys" in any search engine. For example, from the Inno Setup site*.
+
+- Any additional dependency (not catched by DPWizard nor in the VB6SP6sys set) will be copied manually under "./dependency/others". For example, it's the case for "MSWINSCK.OCX" which should be present in final user's system, but appear to be not in some cases (reported by two users ; see changelog in help file).
+
+1) Prepare setup repository and its setup script
+------------------------------------------------
+- Run "_1_prep_repository.bat" to strictly gather all the files which will enter in the final package (so, things coming from dependencies and the bloshome tree itself) toward the "./repository" directory (previous content is fully overwritten). Also, BlosHome.exe will be (re)built to be sure to use the last code source.
+
+- Write (or edit if already exists) the Inno Setup script (.iss) which will manage the installation of these files. The guideline* referenced at bottom of this document should be of some helps.
+
+2) Build the final setup package
+--------------------------------
+Run "_2_build_result.bat" to build the final package content under "./result". This content will be the one used to produce the final zipped package delivered to users.
+
+However, event if these detailled steps are useful at the beginning (when things have to be fine tuned) or if you encounter a problem and want to "debug" it, a better way to produce package when all sounds right is to go through a simple double-click on the all-in-one batch script "../_build_and_package.bat" : it will take care to rebuild the executable, the setup (except point zero about PDWizard) and the final package under "../package".
+
+-
+*How to install VB6 applications with Inno Setup : http://www.jrsoftware.org/iskb.php?vb
+
+--
+FFh Lab / Eric Lequien - 01/2013

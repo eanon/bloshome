@@ -1,0 +1,38 @@
+@echo off
+
+:: Configurable variables
+set bloshome_ver=106
+set zip=c:\PROGRA~1\winzip\wzzip.exe
+
+echo Build BlosHome Package v. %bloshome_ver%
+echo (package #106 matches BlosHome 1.0.6)
+echo ---------------------------------------
+echo IF THE VERSION EXPRESSED HERE IS NOT
+echo THE CURRENT ONE, EDIT THIS BATCH FILE
+echo ---------------------------------------
+echo [CTRL-C] to stop or any key to continue
+pause>nul
+echo.
+
+:: Rebuild the executable
+cd /D %~dp0
+call _build.bat
+
+echo Rebuild the setup
+call setup/_1_prep_repository.bat
+cd /D %~dp0
+call setup/_2_build_result.bat
+cd /D %~dp0
+
+echo Check package location
+if exist package goto has_package
+md package
+:has_package
+
+echo Package bloshome%bloshome_ver%.zip
+del package\bloshome%bloshome_ver%.zip
+%zip% -a -o -ex -whs package\bloshome%bloshome_ver%.zip setup\result\*.*
+explorer package\
+
+set zip=
+set bloshome_ver=

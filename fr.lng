@@ -1,0 +1,289 @@
+[Header]
+Language=FR
+Version=1.0
+Author=FFh Lab / Eric Lequien - http://ffh-lab.com/
+Date=2012.12.12
+
+[Messages]
+0=Aucun chemin n'est indiqué !
+1=Aucun programme déclaré pour ouvrir le type de fichier de
+2=Le fichier de langue indiqué est invalide
+3=Le chargement du fichier de langue a échoué
+4=Client distant pour tout blog sous moteur Blosxom
+
+5=Copier un article
+6=Saisissez un nom de fichier pour l'article à créer à partir de
+7=Attention
+8=Interdiction d'utiliser les caractères
+9=Pas de chiffre en premier caractère
+10=Tout espace sera converti en tiret bas
+11=Les accents seront supprimés
+12=Tout sera converti en minuscules
+13=L'extension
+14=sera automatiquement ajoutée
+15=Exemple : 'Mes premières réflexions' devient 'mes_premieres_reflexions
+
+16=Confirmez-vous que vous souhaitez définitivement supprimer l'article
+17=L'article
+18=a été supprimé avec succès
+
+19=Echec de l'analyse des images jointes à l'article
+20=Aucune suppression n'a été effectuée
+21=Echec de suppression de l'article
+22=L'article
+23=a été supprimé
+24=mais ces images jointes n'ont pu l'être
+25=Vous devrez les effacer par vous-même
+26=ou utiliser la commande
+27=Nettoyer
+
+28=Nouvel article
+29=Saisissez un nom de fichier pour votre article à créer
+
+30=Nouvelle catégorie
+31=Saisissez le nom d'une nouvelle catégorie à créer
+32=Exemple : 'Réflexion de Fond' devient 'reflexion_de_fond'
+33=Astuce : pour pallier les accents manquants, vous pouvez toujours afficher les catégories en majuscule dans les pages Web
+
+34=publier
+35=un aperçu privé de l'article
+36=l'espace de travail local
+37=le blog distant
+38=l'article
+39=rapatrier
+40=une copie de l'article
+41=une sauvegarde complète des articles
+42=Etes-vous sûr de vouloir
+
+43=Téléchargement vers le blog
+44=Echec du transfert de l'article
+45=Essayez de fermer et renouveler
+46=Echec du transfert de l'image
+47=Finalisation sur
+48=Echec de finalisation sur
+49=Succès
+50=Echec de l'archivage local final
+51=L'aperçu privé de l'article
+52=est maintenant accessible en ligne
+53=Vous pouvez y accéder par le bouton 'Voir en ligne'
+54=Si le résultat vous convient, appliquez-lui le statut 'public'
+55=Sinon, déplacez-le vers l'espace de travail local pour révision
+56=L'article
+57=est maintenant publié
+58=ou en double-cliquant sur son nom dans la liste de droite
+59=Echec de vérification d'intégrité finale (taille invalide)
+
+60=Renommer un article
+61=Saisissez un nouveau nom de fichier pour l'article
+
+62=l'URL de Blosxom présente un format invalide. Voules-vous rectifier l'information ?
+63=est maintenant privé (invisible des visiteurs)
+64=est maintenant public (visible de tous)
+65=Attention, ce changement de statut ne modifie pas la date de l'article.
+66=Echec de modification du statut de l'article sélectionné
+
+67=Tentative de connexion
+68=minute
+69=Connecté depuis
+
+70=Cette fonctionnalité n'est pas encore implémentée
+
+71=Aucun article sélectionné
+72=L'article sélectionné n'existe pas ou plus sur disque
+
+73=Ce nom débute par un chiffre
+74=Ce nom contient au moins un caractère interdit
+75=Ce nom d'article existe déjà
+76=Impossible de copier
+
+77=Etes-vous sûr de vouloir définitivement supprimer
+78=L'élément sélectionné n'est pas un article
+
+79=Un article de même nom existe déjà en espace de travail local
+
+80=Cette fonctionnalité n'est pas complètement développée
+81=et vous tombez dans un cas qui n'est pas encore pris en charge
+82=(téléchargement d'un article jamais ou mal archivé)
+
+83=Au moins un fichier requis par l'éditeur est absent : réinstallez
+84=Impossible de créer
+85=L'article sélectionné n'existe déjà pas ou plus dans l'espace de travail local
+
+86=Un article de même nom existe déjà sur serveur
+87=Souhaitez-vous le mettre à jour avec le contenu de ce nouvel article
+88=IMPORTANT : la date de l'article existant sur blog sera maintenue
+89=Cette possibilité de mise à jour n'est pas encore implémentée
+
+90=NB : quand l'analyse prévoit de renommer une image durant le transfert
+91=     son futur nom sur blog est alors indiqué à droite du symbole
+
+92=commande non implémentée
+93=Impossible de renommer
+
+94=Aucune catégorie sélectionnée
+95=L'élément sélectionné n'est pas une catégorie
+96=Cette catégorie n'est pas vide
+97=Par mesure de sécurité, vous ne pouvez la supprimer
+98=Confirmez-vous que vous souhaitez supprimer la catégorie
+
+99=BlosHome est déjà lancé
+100=Le fichier d'aide est absent
+
+101=Attention, l'article est vide
+102=Voulez-vous poursuivre
+103=Attention, l'article ne présente pas un format HTML
+104=Les paramètres d'accès au serveur sont incomplets
+
+105=Vous vous apprêtez à
+106=Le projet courant va donc être fermé
+107=Voulez-vous poursuivre cette opération
+
+108=Echec de la tentative de connexion à
+109=sur le port
+110=en tant que
+111=avec le mot de passe
+112=Voulez-vous les compléter maintenant
+
+113=Votre article n'a pas de titre
+
+114=cache
+115=montre
+
+116=doit être une adresse Web
+
+117=Déconnexion
+118=Connecté
+119=Connexion
+120=Déconnecté
+
+121=Efface le projet
+122=et son espace de travail local
+123=mais conserve son espace de travail (non-vide)
+124=Le projet étant chargé, le travail local est désormais possible
+125=Aucun projet n'étant chargé, la possibilité de travail local est désactivée
+
+126=Connexion à
+127=étant réalisée, le travail distant est maintenant possible
+128=étant déconnecté, la possibilité de travail distant est désactivée
+
+129=Ce projet n'est pas totalement défini
+130=merci de le compléter
+
+131=Le répertoire
+132=n'est pas vide
+133=Par mesure de sécurité, il n'a pas été supprimé
+
+134=Sélectionnez un projet à
+135=ouvrir
+136=supprimer
+
+137=rouvrir le projet courant
+138=ouvrir un nouveau projet
+139=effacer le projet courant
+140=projets trouvés
+141=projet trouvé
+
+142=Pas d'image trouvée dans ce répertoire
+
+[Main Interface]
+mnuProj=&Projet
+mnuProj_New=&Nouveau
+mnuProj_Open=&Ouvrir
+mnuProj_Del=&Supprimer
+mnuLang=&Langue
+mnuInfo_Help=&Aide
+mnuInfo_About=A &Propos
+
+cmdProj=Paramètre&s
+cmdCnnx=Conne&xion
+
+lstLocalRemote_1=Nom
+lstLocalRemote_2=Date
+lstLocalRemote_3=Heure
+lstLocalRemote_4=Vol.
+lstLocalRemote_5=Joint
+lstLocalRemote_6=Enc.
+
+framLocal=Espace de travail local
+lblLocalArts=Article
+cmdMkLocalArt=C&réer
+cmdCopyLocalArt=Cop&ier
+cmdEditLocalArt=E&diter
+cmdDelLocalArt=&Supprimer
+cmdRenLocalArt=R&enommer
+
+cmdUploadArt_0=Aperç&u
+cmdUploadArt_1=Pu&blier
+cmdDownloadArt_0=&Copier
+cmdDownloadArt_1=&Déplacer
+cmdBackupBlog=BAC&KUP BLOG
+cmdCleanupBlog=Ne&ttoyer
+
+framRemote=Blog distant
+lblRemoteCats=Catégorie
+cmdMkRemoteCat=Cré&er
+cmdRmRemoteCat=Suppri&mer
+cmdRenRemoteCat=Re&nommer
+
+lblRemoteArts=Article
+cmdSeeRemoteArt=&Voir en ligne
+cmdDelRemoteArt=S&upprimer
+cmdRenRemoteArt=Ren&ommer
+optStatusArt_0=Privé
+optStatusArt_1=Public
+
+barStatus_Cnnx=Hors-ligne
+
+[About Interface]
+Title=A propos de BlosHome
+
+[Edit Interface]
+Title=Article
+lblGallery=Galerie
+cmdCancel=&Quitter sans enregistrer
+
+[Progress Interface]
+
+[Project Interface]
+Title=Paramètres
+lblTitle=Nom du projet
+lblBlosxomURL=URL de Blosxom
+
+framCnnx=Connexion
+lblHostPort=Serveur - Port
+lblUser=Utilisateur
+lblPass=Mot de passe
+cmdShowPass=montre
+
+framTree=Arborescence
+lblArtRoot=Racine des articles
+lblExcluded=Chemins exclus
+lblArtExt=Extension des articles
+lblFlavExt=Extension de 'flavour'
+
+framArt=Contenu
+lblImgMax=Taille max. image (Ko)
+lblArtEncode=Encodage
+
+framStatus=Statut
+chkPrev=possibilité d'aperçu privé à la publication
+lblPrevPrefix=Préfixe
+lblPrevPass=Passe
+lblPrevPlugin=Nécessite le plugin Preview de Jason Thaxter (ou équivalent) côté serveur.
+
+framCSS=CSS
+lblCSS_0=Cette feuille de styles sera conçue afin que vos articles apparaissent en local comme sur votre site. L'éditeur ne connaissant rien de vos IDs et classes, il vous faut obtenir un résultat via assignation de styles aux seuls tags HTML.
+lblCSS_1=Seule exception, l'identifiant #title qui sera appliqué au titre. Sa définition sera écrite de manière autonome, sans s'appuyer sur aucun héritage.
+
+framChapo=Chapô
+chkChapo=possibilité d'indiquer une limite de chapô
+lblChapo=Séparateur
+lblChapoPlugin=Nécessite le plugin SeeMore de Todd Larason (ou équivalent) côté serveur.
+
+cmdOK=&OK
+cmdCancel=&Annuler
+
+[Select Interface]
+Title=Projets
+cmdOK=&OK
+cmdCancel=&Annuler

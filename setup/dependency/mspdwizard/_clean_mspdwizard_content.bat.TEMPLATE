@@ -1,0 +1,18 @@
+@echo off
+echo Reduce the tree to what required for Bloshome
+echo and minimal material to renew the PDWizard set
+cd /D %~dp0
+echo.
+
+attrib +r +s %0
+del /q *.*
+attrib -r -s %0
+
+del /s /q *.exe
+
+del /q Support\vb6fr.dll
+del /q Support\vb6stkit.dll
+
+echo.
+echo Done !
+pause>nul

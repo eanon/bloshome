@@ -1,0 +1,161 @@
+BlosHome (c) FFh Lab / Eric Lequien - www.ffh-lab.com - 2009-2013
+*****************************************************************
+
+GLOBAL GOAL
+-----------
+Write a Blosxom client to manage articles and categories of a Blosxom blog remotely.
+
+EXTERNAL DEPENDENCIES
+---------------------
+- VB6 SP6 runtime libraries : asycfilt.dll, comcat.dll, msvbvm60.dll, oleaut32.dll, olepro32.dll, stdole32.tlb (~2.2 MB)
+- Microsoft Windows Common Controls (SP6) : mscomctl.ocx (~1 MB)
+- Microsoft Internet Controls (IE) : shdocvw.dll (~1.4 MB)
+- FtpCli6 OCX by Jean Luc Delbeke (MODded in "./annexe/DiFtpCli6_FFhMOD") : "./diftpcli6_ffhmod.ocx" (~85 KB)
+- Zlib DLL by Jean-Loup Gailly & Mark Adler (see "./annexe/Zlib_and_ZIP") : "./zlib.dll" (~50 KB)
+
+EMBEDDED COMPONENTS
+-------------------
+- ZIP/Zlib interfacing class (see "./annexe/Zlib_and_ZIP") : clsybZip.cls (~150 KB of source code)
+- TinyMCE HTML editor (see "./annexe/TinyMCE") : "./tiny_mce" (~ 1.25 MB whose 35 KB for ezimage)
+- EZimage for TinyMCE (see "./annexe/Easy_Image_plugin_for_TinyMCE) : "./tiny_mce/jscripts/tiny_mce/plugins/ezimage"
+
+USED DURING DEVELOPMENT
+-----------------------
+- Microsoft Visual Basic 6 SP6 IDE (with link.exe patched w/ UnVB6FR which removes any VB6FR.DLL dependency)
+- MZ-Tools 3.0 for VB (to complete the VB6 IDE and facilitate some checking ; tab order, orphan variables, stats, etc.)
+- Visicom Média WebExpert 6 (to write "./tiny_mce/editor.html" which acts as template for articles edition)
+- Adobe Photoshop CS2 (to create graphic elements in "./resource")
+- Metrostyle Regular font (metrostyle.ttf has been used to produce text for "./resource/uideco.psd|jpg")
+- IconForge (to create the multi-resolution icon ".resource/bloshome.ico")
+- Word 2007 Pro (to produce the help files ; .docx being converted to .pdf using the SaveAsPDFandXPS add-on)
+- Notepad++ (to write the text files as readme.txt and the current one)
+- Package and Deployment Wizard (has been used in a first pass to figure out the dependencies to take care with Inno Setup)
+- Inno Setup (to produce the final package with usual install/uninstall features)
+
+DEV. TREE
+---------
+- ./ : source code, lang files, no-system dependencies, test help files, batches, dev. notes
+- ./annexe : subprojects about embedded components and external dependencies (each must be deployed in BlosHome tree to be used)
+- ./data : BlosHome will create its projects here (package is delivered with one example called "blog_dummy_at_hosting-company")
+- ./help : different help files unless notes for specific subdirectory or the current dev. notes at project root
+- ./resource : the different sources for resources used by BlosHome (see Notes.txt inside this subdirectory)
+- ./setup : all material to prepare and produce the final delivered package using Inno Setup
+- ./tiny_mce : TinyMCE tree used by BlosHome (things are tuned under "./annexe/TinyMCE" before deployment toward current subdir)
+- ./package : will contain the successive final packages created with _BUILD_AND_PACKAGE.bat (bloshome106.zip matching 'BlosHome 1.0.6')
+
+FINAL TREE
+----------
+- ./ : executables and its no-system dependencies, lang files, help files, uninstaller
+- ./data : where are written the projects (settings, articles in local workspace, zip archives)
+- ./log : where are saved all the log files (one per session) ; this subdirectory, as "./data", will be created if absent
+- ./tiny_mce : the deployed TinyMCE tree (including the editor.html template at its root, and EasyImage plugin deeper)
+
+INSTALL/UNINSTALL
+-----------------
+Both processes are managed by Inno Setup. By default, BlosHome will be installed under "C:\Program Files\FFh Lab\BlosHome\<major_version>.<minor_version>". So, a subsequent install of a, say, 1.0.7 will overwrite a previous 1.0.6, while a 1.1 or 2.0 will be installed beside. See "./setup/Notes.txt" to get all the detailled infos about the BlosHome setup's production.
+
+VERSIONING
+----------
+The public repository of BlosHome is under Git versioning system at Assembla : "http://www.assembla.com/code/bloshome/git/nodes". Your Git client has to communicate with <git@git.assembla.com:bloshome.git>.
+
+Outside of the notion of revision from the versioning system itself, official release of BlosHome (i.e binary packages which appear at http://ffh-lab.com/bloshome.html for direct download, setup and use) will follow this version scheme : "<major_version>.<minor_version>.<revision>", suceeded by an eventual "<edition>" and the covered "<language>" ; for example "1.0.6 alpha EN/FR". 
+
+Also, every official release will be tagged under Git and a reference to this Git point in the history will appear in parenthesis after the version number itself ; for example "1.0.6 alpha EN/FR (Git #<SHA1>)". The difficulty being that Git (because of its decentralized nature) doesn't manage an incremental revision number as SVN does.
+
+IMPORTANT : because of versioning which may imply commits from different authors with different local contexts, all DOS-batch scripts (.bat) which imply configurable variables and absolute paths have been renamed ".bat.TEMPLATE" (a simple research on "*.TEMPLATE" will show you). So, never modify these TEMPLATE files directly, but copy them toward a file named without ".TEMPLATE" and modify your fresh local copies only ! Of course, these personal batches should never be commited nor pushed to public repository (and, for this reason, *.bat has been added in the ".gitignore" file at root).
+
+NB : Since I'm not sure to be very "pro-active" on future development of BlosHome, I've prefered to go with a decentralized versioning system like Git, rather than a centralized one like Subversion (SVN). Like this, project and its eventual derivations will have a better probability to progress through a way or another...
+
+KEY FEATURES
+-------------
+- Projects management (BlosHome acting as a Single Document Interface, one prject can be loaded at a time)
+- Preparation of the articles in a local workspace, without necessity to be connected (one workspace per project)
+- Management of the articles and its eventual images as an unity (hidding the separation to the user)
+- Management of the remote categories on blog
+- Sessions logging (project management, FTP operations, etc)
+- Safe, taking care to avoid dangerous operations (e.g no empty category deletion) and securising sensitive stages
+- Archiving of everything uploaded (articles & images) in zipped format (acts as dynamic backup and to shortcut eventual next download)
+
+BUGS (x = fixed)
+----------------
+- Path to the image provided with article example in dummy project is broken if app is not installed in default path (or on a Win 64-bit)
+- Project with empty name should be refused (actually create a ".bhp")
+- Project with indication of article extension as "." should be refused (actually does that created articles don't appear in workspace)
+x Artefact in lstRemote
+x "Move" (download) of an article w/o archive falls in the "Not implemented" but delete it anyway (so, article is lost)
+- Error 91 ("object variable or with bloc variable not set") on an empty blog (without category nor article)
+- TinyMCE seems to corrupt code (from several media plugins I've tried) to insert a video (seems better with <iframe> than <object>)
+
+LATER/TODO (x = done)
+---------------------
+x Write main user-interface with an usual FTP client/browser look n'feel
+x Handle the notion of project (every project containing its configuration, specific workspace and archives)
+x Implement a bilingual (EN/FR) mechanism through a language menu and binded lang files (containing all localized strings)
+- Do TinyMCE part of editor follows current language (TinyMCE lang pack should exist in the tree and properly be declared in editor.html)
+- Do "Save" and "Save and quit" buttons in (outside of TinyMCE scope) editor.html follows current language (requires place-holders)
+- Provide a way to do text in uideco.jpg be translated according current language too (maybe a real text in front of background image)
+- Unlimited multilingual capability (actually bilingual EN/FR ; need to manage variable "Language" menu from "lang/<code>.lng" files list
+- Add a tab in local workspace to allow to browse articles archive (to just see it or and use it as template for a new article)
+- Autoupdate feature (allowing to enable/disable it through a checkable menu item ; state being saved in app INI file)
+- Find a way to manage stable video in TinyMCE ; tried through call of FixObjectTag() from wbEditor_StatusTextChange() but not enough
+- Improve the ugly basLang/LoadLangFile() ; i.e. gather redondant code in LoadItem() and scan entries w/ do/while rather than fixed list
+- Resize "for real" the article's image according to the dimensions entered in <img> tag, when the pop-up feature is not enabled
+- Do a complete turn of the source code to extend the logging detail (i.e. add more DoLog() in more locations/key-functions)
+- Limit the stored logs in a way or another (e.g. apply a limit based on number of files, dates or global size of the "./log" directory)
+x Give possibility to add a chapo (lede) in the articles (require an appropriate blosxom plugin at server side)
+x Simplify the process (through batch files) about deployment of TinyMCE in BlosHome dev-tree (see details in "annexe\TinyMCE\Notes.txt)
+- Allow to directly edit a cache/index file about timestamps on server which would be indicated in project settings
+- Migrate/rewrite BlosHome as C/C++ cross-platform project (of course, the best, but requires a real Blosxom market to cover the effort)
+x Allow to enable/disable an article (done through the notion of public/private status in conjunction w/ preview blosxom plugin)
+x Keep the connection alive as far as possible (knowing a lot of server ignore the simple keep-alive way)
+- Recover connection and current remote directory (category) if connection is lost (unless disconnection requested by user)
+- Allow more Unicode charsets (currently UTF-8 only) and more ANSI ones (currently iso-8859-1 only)
+- Implement the "Clean" command which will delete the orphan images (not binded with an article ; case when we overwrite an article)
+- Keep consistency of private articles when user changes the preview prefix in project settings (may require some renaming on blog)
+- Keep consistency of articles lede when user changes the chapo tag in project settings (may require some rewrites on blog and archives)
+x Archives management (every article - and its attached images - will be locally kept zipped ; an info file will be added for metadata)
+x Article and its attached image will be managed as a block (separation will be hidden for user) ; this during upload/download/deletion
+x Add a clever mechanism to accelerate download of an article (and its attachments) for review (i.e retrieve from local archive if any)
+- Remote renaming should preserve article timestamp (even if use of an index/cache timestamp managed by a blosxom plugin)
+- Take care to not re-upload images (beside existing ones) when local article is uploaded to overwrite a remote one with same name
+x Clean-up (commenting) of clsybZip.cls class using MZ-Tools (lot of orphan code)
+- Avoid both private/preview entries about same article in meta.cache (requires renaming in meta.cache when user changes article status)
+x Manage a gauge during upload
+- Manage agauge during download (actually, download is just simulated from archive recovering, but when a real download will be added)
+- See a way to improve the error reported in case of failure from within DiFtpCli
+- Indicate index/cache file about timestamp on server side, in project settings, to update it when necessary (status change, ren cat/art)
+- Add a command to allow user to change/force the timestamp of a published article (requires timestamp cache/index on server side)
+- See if better to copy attached image to local workspace for every saved article (actually images stay at their original locations)
+- Express the article size in bytes when it's below 1KB (the problem being to display the value in the given column width)
+- Forbid to publish at blog root (i.e. outside of any category)
+- Allow to manage the writeback/feedback comments (i.e. edit, enable/disable, delete)
+- Manage the Blsxom installation (edit of conf variables of local scripts stock, copy/chmod to remote cgi-bin, creation of public tree)
+- Reorder UI to manage remote blog through tabs (if comments & setup are managed a day) : package/setup | cats/arts | articles/comments
+x Manage a way to change local absolute path of any image to a relative one from article at upload-time (org path being kept in comment)
+
+x Work around the Vista/Seven UAC restriction which may virtualize subdir (data & log) BlosHome creates in its own tree ; added manifest
+- Embed manisfest (provided for rights elevation to satisfy UAC) as resource (beside multi-res icon since VB6 handles one res file only)
+- To completely remove warnings and be fully UAC compliant, change the location of "data" and "log" directories and remove the elevation
+
+LATER/TODO about TinyMCE inside BlosHome (x = done)
+---------------------------------------------------
+x Write the BlosHome editor template (derived for every article) from Full Example delivered with Advanced theme of TinyMCE
+x Embed TinyMCE in a WebBrowser object (i.e shdocvw.dll, adaptation of tinymce/full.html)
+x Allow to switch between WYSIWYG/HTML modes (implemented in editor.html which is full.html-based)
+x Manage a button (pagebreak) to handle the insertion of a lede (chapo) if the "See More" plugin has been set in project settings
+x Reduce plugins tree to what useful for BlosHome
+x Find way to save article knowing TinyMCE is provided for online (client/server) use only ; solved going through msg in IE status-bar  
+  (see <http://tinymce.moxiecode.com/punbb/viewtopic.php?pid=52446> where I've initiated a discussion around this ; I'm "eremax")
+x Organize the toolbars and editor part/window dimensions
+x Find a way to manage image properties an easier and more CSS oriented way than with default advimage plugin (written ezimage plugin)
+x Find a way to provide CSS to obtain the same local aspect than the one when article will be published on site (CSS in project settings)
+x Use "extended_valid_element" to allow alignement of image as "float:right|left" and margins as "top|bottom|right|left"
+x Autofocus in article body part when editor is launched
+x In French localization ("themes/advanced/langs/fr.js"), modify too large "Famille de police" as "Police" & "Taille police" as "Taille"
+
+CHANGELOG
+---------
+See in the PDF help files under "./help" ; help sources being "bloshome_[fr|en].doc"
+
+--
+This original document of 2013/01/26, as all BlosHome project content at level of v. 1.0.6 alpha (first public release tagged from first Git commit), has been written by Eric Lequien (aka "FFh" or "ELN" in the framework of my FFh Lab's developments).

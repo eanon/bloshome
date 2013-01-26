@@ -1,0 +1,50 @@
+@echo off
+echo BlosHome - Gather package files in local repository
+echo ---------------------------------------------------
+echo.
+
+cd /D %~dp0
+del /q /f /s repository\*.*
+
+copy /v /y "dependency\vb6sp6sys\stdole2.tlb" repository
+copy /v /y "dependency\vb6sp6sys\msvbvm60.dll" repository
+copy /v /y "dependency\vb6sp6sys\oleaut32.dll" repository
+copy /v /y "dependency\vb6sp6sys\olepro32.dll" repository
+copy /v /y "dependency\vb6sp6sys\asycfilt.dll" repository
+copy /v /y "dependency\vb6sp6sys\comcat.dll" repository
+
+copy /v /y "dependency\mspdwizard\Support\MSCOMCTL.OCX" repository
+copy /v /y "dependency\mspdwizard\Support\shdocvw.dll" repository
+:copy /v /y "dependency\mspdwizard\Support\MSCMCFR.DLL" repository
+
+copy /v /y "dependency\others\MSWINSCK.OCX" repository
+
+copy /v /y "..\annexe\DiFtpCli6_FFhMOD\DiFtpCli6_FFhMOD.ocx" ..
+copy /v /y "..\DiFtpCli6_FFhMOD.ocx" repository
+
+copy /v /y "..\Zlib.dll" repository
+
+copy /v /y "..\bloshome.exe" repository
+copy /v /y "..\bloshome.exe.manifest" repository
+copy /v /y "..\en.lng" repository
+copy /v /y "..\fr.lng" repository
+
+copy /v /y "..\help\file_id.diz" repository
+copy /v /y "..\help\ula_en.txt" repository
+copy /v /y "..\help\ula_fr.txt" repository
+copy /v /y "..\help\readme.txt" repository
+copy /v /y "..\help\lisezmoi.txt" repository
+copy /v /y "..\help\bloshome_en.pdf" repository
+copy /v /y "..\help\bloshome_fr.pdf" repository
+
+xcopy ..\tiny_mce\*.* repository\tiny_mce /e /i /f /h /r /y
+del /q /f repository\tiny_mce\~*.*
+
+copy /v /y "..\data\blog_dummy_at_hosting-company.bhp" repository\data
+md repository\data
+xcopy ..\data\blog_dummy_at_hosting-company\*.* repository\data\blog_dummy_at_hosting-company /e /i /f /h /r /y
+
+echo.
+echo Done !
+echo 'repository' contains now the required files for 'bloshome.iss'
+set vb=

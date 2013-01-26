@@ -1,0 +1,6 @@
+@echo off
+copy /v /y ZLib.dll ..\..\
+echo Zlib.dll has been copied in the BlosHome dev. tree
+echo (clsybZip.cls is not copied auomatically to avoid to
+echo overwrite one you could have modified in BlosHome context)
+pause>nul

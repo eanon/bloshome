@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- TinyMCE (by Moxiecode Systems) template for BlosHome (by FFh Lab / Eric Lequien) -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script type="text/javascript" src="jscripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript">
+tinyMCE.init({
+	mode : "exact", elements : "editor",
+	theme : "advanced", skin : "default",
+	language : 'en',
+	auto_focus : "editor",
+
+    browsers : "msie,gecko,opera", 
+    safari_warning : false, 
+	
+    button_tile_map : true,
+	custom_shortcuts : false,
+	element_format : "html",
+	fix_list_elements : true,
+	remove_trailing_nbsp : true,  
+	accessibility_warnings : false,
+	
+	extended_valid_elements : "a[href|target=_blank],b/strong,i/em",
+
+	plugins : "ezimage,inlinepopups,media,PAGEBREAK_HOLDER,paste,preview",
+	dialog_type : "modal",
+	PAGEBREAK_TAG_HOLDER
+	plugin_preview_width : "530",
+	plugin_preview_height : "550",
+
+	theme_advanced_buttons1 : "fontselect,fontsizeselect,forecolor,backcolor,|,bold,italic,underline,strikethrough,|,sub,sup,|,link,unlink,|,charmap,hr",
+	theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,undo,redo,PAGEBREAK_BTN_HOLDER,|,justifyleft,justifycenter,justifyright,justifyfull,|,bullist,numlist,outdent,indent,|,ezimage,media,|,preview",
+	theme_advanced_buttons3 : "",
+	theme_advanced_toolbar_location : "top",
+	theme_advanced_toolbar_align : "left",
+	theme_advanced_statusbar_location : "bottom",
+	theme_advanced_resizing : false,
+
+	content_css : 'CSS_HOLDER?' + new Date().getTime(),
+
+	setupcontent_callback : "initContent",
+	handle_node_change_callback : "nodeChangeHandler"
+});	  
+
+function initContent(){
+	bFreeze = false;
+	tinyMCE.activeEditor.setContent(document.getElementById("buffer").innerHTML);}
+	
+function initSave(bExit){
+	var strMsg = "save_trigger";
+	document.getElementById("buffer").innerHTML = tinyMCE.get('editor').getContent();
+	if (bExit == true) strMsg += " exit_trigger";
+	window.status = strMsg;
+	window.status = "";}	 
+	
+function nodeChangeHandler(editor_id, node, undo_index, undo_levels, visual_aid, any_selection){
+   // maintain img proportion prohibiting assignment of a height
+   if (node.nodeName == "IMG")
+   	  node.removeAttribute("height");}
+</script>
+
+<style type="text/css">	   
+	.label {position: relative; top: -15px; font: bold 11pt MS Sans Serif}
+	#title {width: 91%; height: 20px; overflow: hidden; border: 1px solid #CCCCCC; margin-top: -36px; margin-bottom: -10px;
+			padding-left: 6px; CSS-TITLE_HOLDER}
+	#editor {width: 100%; height: 575px}
+	#buffer {visibility: hidden; display: none}
+	#cmdbar {width: 100%; margin-top: 15px}
+	#mode {float: right; margin: 0 10px 0 0; position: relative; top: -22px; font-size: 8pt}
+</style>
+</head>
+
+<body scroll="no">
+<form>
+<br>
+<span class="label">Title&nbsp;:&nbsp;</span><textarea id="title" wrap="off"><!-- TITLE_HOLDER --></textarea>
+<br>
+<textarea id="editor"></textarea>
+<div id="buffer"><!-- CONTENT_HOLDER --></div>
+
+<div id="cmdbar">
+    <input type="button" value="Save" onclick="initSave(false);">
+    <input type="button" value="Save and Quit" onclick="initSave(true);"> 
+	<span id="mode">
+		<a href="javascript:;" onmousedown="tinyMCE.get('editor').show();">[WYSIWYG]</a>
+		&nbsp;&nbsp;&nbsp;
+		<a href="javascript:;" onmousedown="tinyMCE.get('editor').hide();">[HTML]</a>
+	</span>
+</div>
+</form>
+
+</body>
+</html>

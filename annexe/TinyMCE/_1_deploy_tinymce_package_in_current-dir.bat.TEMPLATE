@@ -1,0 +1,35 @@
+@echo off
+echo Deploy TinyMCE Package in current directory
+
+:: Configurable variables
+set ver=3.5.5
+set pack=tinymce_%ver%.zip
+set lang=tinymce_language_pack_%ver%.zip
+set unzip=c:\PROGRA~1\winzip\wzunzip.exe
+set zip=c:\PROGRA~1\winzip\wzzip.exe
+
+:: Do not change anything below unless you know what you do
+echo Expand TinyMCE
+cd /D %~dp0
+md tinymce_%ver%
+cd tinymce_%ver%
+%unzip% -d ..\%pack%
+cd tinymce
+xcopy *.* .. /e /v /i /h /r /y
+cd..
+rd /s /q tinymce
+
+echo Expand the language pack
+%unzip% -d -o ..\%lang% tmp\
+%zip% -p -r -a -o -ex -whs tmp\tmp.zip tmp\tinymce_language_pack\*.*
+%unzip% -d -o tmp\tmp.zip jscripts\tiny_mce\
+rd /s /q tmp
+
+set zip=
+set unzip=
+set lang=
+set pack=
+set ver=
+echo.
+echo Done !
+pause>nul

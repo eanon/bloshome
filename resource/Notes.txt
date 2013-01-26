@@ -1,0 +1,12 @@
+This directory contains the BlosHome resource files.
+
+- "bloshome.ico" is a multi-resolution icon (including version until 32-bit colors and >= 32x32 px) managed through SetIcon() at app loading, overriding the default VB6 limitations. This icon has to be declared in a ".rc", then compiler in the embedded ".res" using the DOS-batch "resource_compile.bat".
+
+- frmMain/lstImg's images (used in the framework of lstRemote) are directly embedded in the VB6 project : see the lstImg custom properties.
+
+- "internet.bmp" is a clickable image in the BlosHome status-bar (used to reach the online blog home).
+
+- "uideco.jpg" comes from "uideco.psd" (made under Photoshop CS2) ; it uses the free "Metrostyle Regular" font (if this font is absent in your Windows, just copy "Metrostyle.ttf" in you the system fonts directory). Note that French text is already provided in "uideco.psd", even if not used in final "uideco.jpg" (could be useful if, a day, this image was used in a multilingual way ; see TODO list in main "../Notes").
+
+--
+FFh Lab - 2012/12/11

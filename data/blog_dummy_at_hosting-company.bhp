@@ -1,0 +1,28 @@
+[Main]
+Title=blog dummy at hosting-company
+
+[Server]
+Host=dummy.com
+User=dummy_master
+Pass=1s5SkoLPM007
+Port=21
+
+[Tree]
+Blosxom URL=http://www.dummy.com/cgi-bin/blog/blosxom.cgi
+Art. Root=/httpdocs/blog
+Art. Ext.=.art
+Flavour Ext.=.html
+Excluded Paths=/feedback
+
+[Article]
+Image Max.=150
+Art. Encoding=UTF-8
+
+[Status]
+w/Preview=1
+Preview Prefix=PRIVATE
+Preview Pass=privateview
+
+[Chapo]
+w/Chapo=1
+Chapo Limit=more

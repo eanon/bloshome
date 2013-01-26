@@ -1,0 +1,18 @@
+TinyMCE is a well known online HTML editor produced by http://tinymce.moxiecode.com/. BlosHome embeds it in an offline way. This directory contains the successive TinyMCE release(s) which have been embedded in the different versions of BlosHome (since its release in a public repository ; so previous versions don't appear). 
+
+Here is the detailled process to embed a new TinyMCE release
+------------------------------------------------------------
+WARNING : this process is given AS IS, so take care to double-check the steps by yourself !
+
+0) Backup ! Or, if you work with a repository, remember to not commit in case something goes wrong.
+1) Download TinyMCE at http://www.tinymce.com/ ; preferably a "production" edition (without "dev" in the name). 
+2) Download the language packs you want to add to the default English one (you'll get a tinymce_language_pack.zip).
+3) Rename "tinymce_language_pack.zip" as "tinymce_language_pack_<ver_number>.zip" (e.g. "3.5.5" for lang-pack about "tinymce_3.5.5.zip")
+4) Run the first batch double-clicking on it (TinyMCE and its languages pack will be expanded under "tinymce_<ver_number>")
+6) Double-check the point 4, then run the second batch which will irreversibly replace the TinyMCE in the BlosHome dev. tree !!!
+7) Check in the BlosHome editor that all sounds right, creating a test article.
+ 
+If EasyImage has been not preserved by the process above (it shouldn't, but we never know) or seems to be corrupted, you can download it at http://www.ffh-lab.com/ezimage.html, then re-install it by yourself or, if you're on a working copy, update its specific directory ("BlosHome/tiny_mce/jscripts/tiny_mce/plugins/ezimage") from the repository.
+
+--
+FFh Lab - 01/2013

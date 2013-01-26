@@ -1,0 +1,53 @@
+@echo off
+echo Deploy TinyMCE Package in BlosHome Dev. arbo
+
+echo.
+echo Warning, the current TinyMCE in BlosHome will be
+echo replaced, taking care to preserve BlosHome material
+echo [press CTRL-C to stop here or any key to continue]
+pause > nul
+
+:: Configurable variables
+set from=tinymce_3.5.5
+set to=D:\ELN\ProjNET\FFhLab\Dev\BlosHome\tiny_mce
+set ifo=%temp%\tinymce4bloshome
+
+echo Preserves config and ezimage
+md %ifo%
+copy %to%\editor.html %ifo%
+md %ifo%\ezimage
+xcopy %to%\jscripts\tiny_mce\plugins\ezimage\*.* %ifo%\ezimage /e /v /i /h /r /y
+
+echo Enumerates needed plugins
+dir %to%\jscripts\tiny_mce\plugins /b >%ifo%\plugins_utiles.txt
+
+echo Deletions
+rd /s /q %to%\jscripts
+del %to%\editor.html
+
+echo Copies
+md %to%\jscripts
+xcopy %from%\jscripts\*.* %to%\jscripts  /e /v /i /h /r /y
+copy %ifo%\editor.html %to%
+md %to%\jscripts\tiny_mce\plugins\ezimage
+xcopy %ifo%\ezimage %to%\jscripts\tiny_mce\plugins\ezimage  /e /v /i /h /r /y
+
+echo.
+echo You have to delete the unuseful plugins manually
+echo [press any key when done]
+explorer %to%\jscripts\tiny_mce\plugins
+notepad %ifo%\plugins_utiles.txt
+pause>nul
+
+echo.
+echo You have to delete the theme called 'simple'
+echo and adjust the French lang file for theme 'advanced' 
+echo ('Taille Police' doit devenir 'Taille')
+echo [press any key when done]
+explorer %to%\jscripts\tiny_mce\themes
+notepad %to%\jscripts\tiny_mce\themes\advanced\langs\fr.js
+pause>nul
+
+set ifo=
+set to=
+set from=

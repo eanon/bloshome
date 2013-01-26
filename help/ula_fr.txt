@@ -1,0 +1,11 @@
+NOTICE LEGALE
+
+Ce package est un Freeware Open-source ; « alpha » signifiant ici qu’il est dans un état fonctionnel mais inachevé, livré TEL QUEL !
+
+Il ne peut être vendu. Si vous le modifiez, vous devez garder référence à cette publication originale à travers cette mention en un endroit visible de l’utilisateur final (par exemple en boîte à-propos) : « Basé sur BlosHome 1.0 (c) FFh Lab / Eric Lequien, 2006-2013 – www.ffh-lab.com". 
+
+Si vous avez acquis une copie du projet à partir d’un dépôt (SVN, Git, etc) et décidez d’y contribuer plutôt qu’aller vers une dérivation dissociée, contactez-moi : dès que nous sommes d’accord, vous aurez accès au dépôt principal en écriture et deviendrez co-auteur de BlosHome, dûment mentionné dans le logiciel lui-même. 
+
+Si vous développez un logiciel dérivé indépendant qui pourrait devenir un produit commercial, vous devriez me contacter que nous prenions un accord équitable, proportionné à la part de BlosHome dans votre propre réalisation. 
+
+Aucune garantie n’étant attachée à ce code, vous acceptez de l’utiliser à vos propres risques et être seul responsable de tout effet direct ou indirect sur vos blogs et données relatives.

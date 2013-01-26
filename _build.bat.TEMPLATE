@@ -1,0 +1,9 @@
+@echo off
+
+:: Configurable variables
+set vb="C:\Program Files\Microsoft Visual Studio\VB98\vb6.exe"
+
+%vb% /make bloshome.vbp /out build.log
+
+echo done !
+set vb=

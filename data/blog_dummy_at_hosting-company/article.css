@@ -1,0 +1,10 @@
+/*  Based on dummy.com/theme.css and dummy.com/blog/head.htm 
+     IMPORTANT : dummy.com project is just a fictive example */
+
+body {font: 10pt Georgia, Dotum; color: #333333; text-align: justify}
+
+h3 {margin-top: 0; margin-bottom: 0}
+a, .lnk {color: #D43412; text-decoration: underline; cursor: pointer}
+
+#title {font-variant: small-caps; font-size: 12pt; font-weight: bold; 
+          margin: 0 0 10px 0; color: #E36020}

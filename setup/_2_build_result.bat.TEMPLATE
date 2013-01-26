@@ -1,0 +1,23 @@
+@echo off
+echo BlosHome - Build the final package content 
+echo ------------------------------------------------------
+echo (will compile bloshome.isst and gather external files)
+echo.
+
+:: Configurable variable
+set inno="C:\Program Files\Inno Setup 5\ISCC.exe"
+
+cd /D %~dp0
+del /q /f /s result\*.*
+copy /v /y "repository\file_id.diz" result
+copy /v /y "repository\readme.txt" result
+copy /v /y "repository\lisezmoi.txt" result
+copy /v /y "repository\bloshome_en.pdf" result
+copy /v /y "repository\bloshome_fr.pdf" result
+
+%inno% bloshome.iss
+
+echo.
+echo Done !
+echo 'result' contains now the content to deliver !
+set inno=
