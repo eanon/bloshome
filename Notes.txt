@@ -78,6 +78,7 @@ KEY FEATURES
 
 BUGS (x = fixed)
 ----------------
+- When I try to delete an empty category, BlosHome claims the diectory is not empty (maybe a wrong consideration of symbolic '.' & '..')
 - Path to the image provided with article example in dummy project is broken if app is not installed in default path (or on a Win 64-bit)
 - Project with empty name should be refused (actually create a ".bhp")
 - Project with indication of article extension as "." should be refused (actually does that created articles don't appear in workspace)

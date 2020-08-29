@@ -39,7 +39,7 @@ Begin VB.Form frmEdit
       NoFolders       =   0   'False
       Transparent     =   0   'False
       ViewID          =   "{0057D0E0-3573-11CF-AE69-08002B2E1262}"
-      Location        =   ""
+      Location        =   "http:///"
    End
    Begin VB.DirListBox lstDir 
       Height          =   2565
@@ -81,7 +81,7 @@ Begin VB.Form frmEdit
       NoFolders       =   0   'False
       Transparent     =   0   'False
       ViewID          =   "{0057D0E0-3573-11CF-AE69-08002B2E1262}"
-      Location        =   ""
+      Location        =   "http:///"
    End
    Begin VB.DriveListBox lstDrive 
       Height          =   315
